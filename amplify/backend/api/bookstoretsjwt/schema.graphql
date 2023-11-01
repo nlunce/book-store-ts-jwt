@@ -1,0 +1,11 @@
+type Book @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  author: [String!]!
+  description: String!
+  bookCover: String!
+  price: Float!
+  ISBN10: String!
+  stock: Int!
+  available: Boolean!
+}
