@@ -6,6 +6,8 @@
 
 export { default as Ampligram } from "./Ampligram";
 export { default as BookActionCard } from "./BookActionCard";
+export { default as BookCreateForm } from "./BookCreateForm";
+export { default as BookUpdateForm } from "./BookUpdateForm";
 export { default as BrowseBooksPage } from "./BrowseBooksPage";
 export { default as BrowseBooksPageAuthenticated } from "./BrowseBooksPageAuthenticated";
 export { default as BrowseYourBooksPage } from "./BrowseYourBooksPage";
