@@ -1,35 +1,37 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React, { useState, useEffect } from "react";
+import { Amplify, Auth } from "aws-amplify";
+import awsExports from "./aws-exports";
+
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+import { BrowseBooksUnauthenticated, BrowseBooksAuthenticated } from "./pages";
+
+Amplify.configure(awsExports);
+
+const App: React.FC = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser()
+      .then((user) => {
+        setUser(user);
+        console.log(user);
+      })
+      .catch((error) => {
+        setUser(null);
+        console.log(error);
+      });
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* Render the BrowseBooksPage component if the user is not authenticated (user is null). */}
+      {user === null && <BrowseBooksUnauthenticated />}
+
+      {/* Render the BrowseBooksPageAuthenticated component if the user is authenticated (user is not null). */}
+      {user !== null && <BrowseBooksAuthenticated />}
     </>
   );
-}
+};
 
 export default App;
