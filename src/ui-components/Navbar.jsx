@@ -10,7 +10,7 @@ import { getOverrideProps } from "./utils";
 import { Button, Flex, Text, View } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function Navbar(props) {
-  const { overrides, ...rest } = props;
+  const { logoSlot, overrides, ...rest } = props;
   return (
     <Flex
       gap="10px"
@@ -49,6 +49,7 @@ export default function Navbar(props) {
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
+          children={logoSlot}
           {...getOverrideProps(overrides, "LogoSlot")}
         ></View>
         <Text

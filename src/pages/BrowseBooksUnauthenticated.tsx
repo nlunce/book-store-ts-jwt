@@ -15,11 +15,14 @@ import { LogoComponent } from "../images";
 
 import { AuthenticatorModal, ContactUsModal } from "../modals";
 
+// Define a functional component for the main Browse Books page.
 const BrowseBooksUnauthenticated: React.FC = () => {
+  // Initialize state variables using the useState hook.
   const [activeContent, setActiveContent] = useState(0);
   const [book, setBook] = useState();
   const [showBookCollection, setShowBookCollection] = useState(true);
 
+  // Define overrides for styling and behavior of various components within this page.
   const browseBooksOverrides = {
     BrowseBooksPage: {
       width: "100%",
@@ -67,6 +70,7 @@ const BrowseBooksUnauthenticated: React.FC = () => {
 
   return (
     <>
+      {/* Render the main Browse Books page with specified overrides. */}
       <BrowseBooks
         overrides={browseBooksOverrides}
         bookCollectionSlot={
@@ -98,6 +102,7 @@ const BrowseBooksUnauthenticated: React.FC = () => {
             />
           ) : (
             <>
+              {/* Render a close bar and book details when a specific book is selected. */}
               <CloseBar
                 width={"100%"}
                 height={"50px"}
@@ -118,6 +123,7 @@ const BrowseBooksUnauthenticated: React.FC = () => {
         }
       />
 
+      {/* Conditional rendering of ContactUsModal based on the activeContent state. */}
       {activeContent === 4 && (
         <>
           <ContactUsModal
@@ -128,6 +134,7 @@ const BrowseBooksUnauthenticated: React.FC = () => {
         </>
       )}
 
+      {/* Conditional rendering of AuthenticatorModal based on the activeContent state. */}
       {(activeContent === 8 || activeContent === 9) && (
         <>
           <AuthenticatorModal

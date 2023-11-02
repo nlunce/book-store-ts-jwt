@@ -5,20 +5,21 @@ import {
   CloseBar,
   ProductDetail,
 } from "../ui-components";
-
 import {
   navbarAuthenticatedOverrides as navbarAuthenticatedOverridesImported,
   footerOverrides,
 } from "../stylingOverrides.js";
-
 import { LogoComponent } from "../images";
 import { ContactUsModal, RedeemCodeModal } from "../modals";
 
+// This component represents the authenticated version of the Browse Books page.
 const BrowseBooksAuthenticated: React.FC = () => {
+  // Define state variables using the useState hook.
   const [activeContent, setActiveContent] = useState(0);
   const [book, setBook] = useState();
   const [showBookCollection, setShowBookCollection] = useState(true);
 
+  // Overrides for styling and behavior of the components on this page.
   const browseBooksAuthOverrides = {
     BrowseBooksPageAuthenticated: {
       width: "100%",
@@ -79,6 +80,7 @@ const BrowseBooksAuthenticated: React.FC = () => {
 
   return (
     <>
+      {/* Render the BrowseBooksAuth component with specified overrides. */}
       <BrowseBooksAuth
         overrides={browseBooksAuthOverrides}
         bookCollectionSlot={

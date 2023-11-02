@@ -6,11 +6,12 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useAuthSignOutAction } from "./utils";
 import { Button, Flex, Text, View } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function NavbarAuthenticated(props) {
-  const { overrides, ...rest } = props;
+  const { logoSlot, overrides, ...rest } = props;
+  const buttonOnClick = useAuthSignOutAction({ global: false });
   return (
     <Flex
       gap="40px"
@@ -48,6 +49,7 @@ export default function NavbarAuthenticated(props) {
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
+          children={logoSlot}
           {...getOverrideProps(overrides, "LogoSlot")}
         ></View>
         <Text
@@ -239,6 +241,9 @@ export default function NavbarAuthenticated(props) {
           isDisabled={false}
           variation="primary"
           children="Log Out"
+          onClick={() => {
+            buttonOnClick();
+          }}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>

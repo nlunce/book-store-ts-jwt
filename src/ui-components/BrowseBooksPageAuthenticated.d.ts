@@ -26,6 +26,8 @@ export declare type BrowseBooksPageAuthenticatedOverridesProps = {
     Footer?: FooterProps;
 } & EscapeHatchProps;
 export declare type BrowseBooksPageAuthenticatedProps = React.PropsWithChildren<Partial<FlexProps> & {
+    bookCollectionSlot?: React.ReactNode;
+} & {
     overrides?: BrowseBooksPageAuthenticatedOverridesProps | undefined | null;
 }>;
 export default function BrowseBooksPageAuthenticated(props: BrowseBooksPageAuthenticatedProps): React.ReactElement;

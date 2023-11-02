@@ -11,7 +11,7 @@ import Navbar from "./Navbar";
 import { Flex } from "@aws-amplify/ui-react";
 import Footer from "./Footer";
 export default function BrowseBooksPage(props) {
-  const { overrides, ...rest } = props;
+  const { bookCollectionSlot, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -57,6 +57,7 @@ export default function BrowseBooksPage(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         backgroundColor="rgba(255,255,255,1)"
+        children={bookCollectionSlot}
         {...getOverrideProps(overrides, "BookCollectionSlot")}
       ></Flex>
       <Footer

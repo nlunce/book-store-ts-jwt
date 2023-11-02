@@ -35,6 +35,8 @@ export declare type NavbarAuthenticatedOverridesProps = {
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type NavbarAuthenticatedProps = React.PropsWithChildren<Partial<FlexProps> & {
+    logoSlot?: React.ReactNode;
+} & {
     overrides?: NavbarAuthenticatedOverridesProps | undefined | null;
 }>;
 export default function NavbarAuthenticated(props: NavbarAuthenticatedProps): React.ReactElement;
