@@ -1,94 +1,83 @@
 import React, { useState } from "react";
 import {
-  BrowseBooksPageAuthenticated as BrowseBooksAuth,
+  BrowseBooksPage as BrowseBooks,
   BookActionCardCollection,
   CloseBar,
   ProductDetail,
 } from "../ui-components";
+
 import {
-  navbarAuthenticatedOverrides as navbarAuthenticatedOverridesImported,
+  navbarOverrides as navbarOverridesImported,
   footerOverrides,
 } from "../stylingOverrides.js";
-import { LogoComponent } from "../images";
-import { ContactUsModal, RedeemCodeModal } from "../modals";
 
-// This component represents the authenticated version of the Browse Books page.
-const BrowseBooksAuthenticated: React.FC = () => {
-  // Define state variables using the useState hook.
+import { LogoComponent } from "../images";
+
+import { AuthenticatorModal, ContactUsModal } from "../modals";
+
+// Define a functional component for the main Browse Books page.
+const BrowseBooksUnauthenticated: React.FC = () => {
+  // Initialize state variables using the useState hook.
   const [activeContent, setActiveContent] = useState(0);
   const [book, setBook] = useState();
   const [showBookCollection, setShowBookCollection] = useState(true);
 
-  // Overrides for styling and behavior of the components on this page.
-  const browseBooksAuthOverrides = {
-    BrowseBooksPageAuthenticated: {
+  // Define overrides for styling and behavior of various components within this page.
+  const browseBooksOverrides = {
+    BrowseBooksPage: {
       width: "100%",
     },
-
-    // Overrides for the authenticated Navbar component.
-    NavbarAuthenticated: {
+    Navbar: {
       overrides: {
-        ...navbarAuthenticatedOverridesImported,
+        ...navbarOverridesImported,
+
         Home: {
-          // Define behavior for the "Home" button in the Navbar.
-          ...navbarAuthenticatedOverridesImported["Home"],
+          ...navbarOverridesImported["Home"],
           onClick: () => {
             setActiveContent(0);
             setShowBookCollection(true);
           },
         },
-
         Books: {
-          // Define behavior for the "Books" button in the Navbar.
-          ...navbarAuthenticatedOverridesImported["Books"],
+          ...navbarOverridesImported["Books"],
           onClick: () => {
             setActiveContent(0);
             setShowBookCollection(true);
           },
         },
-
         "Contact us": {
-          // Define behavior for the "Contact us" button in the Navbar.
-          ...navbarAuthenticatedOverridesImported["Contact us"],
+          ...navbarOverridesImported["Contact us"],
           onClick: () => {
             setActiveContent(4);
           },
         },
-
-        "Redeem Code": {
-          // Define behavior for the "Redeem Code" button in the Navbar.
-          ...navbarAuthenticatedOverridesImported["Redeem Code"],
+        Button39493466: {
           onClick: () => {
-            setActiveContent(3);
+            setActiveContent(8);
           },
         },
-
-        "Your Books": {
-          // Define behavior for the "Your Books" button in the Navbar.
-          ...navbarAuthenticatedOverridesImported["Your Books"],
+        Button39493467: {
           onClick: () => {
-            setActiveContent(5);
+            setActiveContent(9);
           },
         },
       },
       logoSlot: <LogoComponent />,
     },
 
-    // Overrides for the Footer component.
     Footer: { overrides: footerOverrides },
   };
 
   return (
     <>
-      {/* Render the BrowseBooksAuth component with specified overrides. */}
-      <BrowseBooksAuth
-        overrides={browseBooksAuthOverrides}
+      {/* Render the main Browse Books page with specified overrides. */}
+      <BrowseBooks
+        overrides={browseBooksOverrides}
         bookCollectionSlot={
           showBookCollection ? (
             <BookActionCardCollection
               overrideItems={({ item, index }) => ({
                 overrides: {
-                  // Define behavior for other elements in the book collection.
                   image: {
                     style: { cursor: "pointer" },
                     onClick: () => {
@@ -134,18 +123,7 @@ const BrowseBooksAuthenticated: React.FC = () => {
         }
       />
 
-      {/* Render the RedeemCodeModal when activeContent is 3. */}
-      {activeContent === 3 && (
-        <>
-          <RedeemCodeModal
-            overlayFunctionality={() => {
-              setActiveContent(0);
-            }}
-          />
-        </>
-      )}
-
-      {/* Render the ContactUsModal when activeContent is 4. */}
+      {/* Conditional rendering of ContactUsModal based on the activeContent state. */}
       {activeContent === 4 && (
         <>
           <ContactUsModal
@@ -155,8 +133,20 @@ const BrowseBooksAuthenticated: React.FC = () => {
           />
         </>
       )}
+
+      {/* Conditional rendering of AuthenticatorModal based on the activeContent state. */}
+      {(activeContent === 8 || activeContent === 9) && (
+        <>
+          <AuthenticatorModal
+            overlayFunctionality={() => {
+              setActiveContent(0);
+            }}
+            initialState={activeContent === 9 ? "signUp" : undefined}
+          />
+        </>
+      )}
     </>
   );
 };
 
-export default BrowseBooksAuthenticated;
+export default BrowseBooksUnauthenticated;
