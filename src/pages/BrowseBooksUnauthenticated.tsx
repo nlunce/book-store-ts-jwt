@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   Navbar,
   BookActionCardCollection,
+  Footer,
   CloseBar,
   ProductDetail,
 } from "../ui-components";
@@ -16,12 +17,30 @@ import { LogoComponent } from "../images";
 import { AuthenticatorModal, ContactUsModal } from "../modals";
 
 const BrowseBooksPageUnauthenticated: React.FC = () => {
-  const [selectedItem, setSelectedItem] = useState<
-    "contactUs" | "books" | null
-  >(null);
+  const [selectedModal, setSelectedModal] = useState<number>(-1);
 
-  const handleClick = function (itemClicked: "contactUs" | "books") {
-    setSelectedItem(itemClicked);
+  const modals = [
+    <ContactUsModal
+      overlayFunctionality={() => {
+        setSelectedModal(-1);
+      }}
+    />,
+    <AuthenticatorModal
+      overlayFunctionality={() => {
+        setSelectedModal(-1);
+      }}
+      initialState="signIn"
+    />,
+    <AuthenticatorModal
+      overlayFunctionality={() => {
+        setSelectedModal(-1);
+      }}
+      initialState="signUp"
+    />,
+  ];
+
+  const handleClick = function (itemClicked: number) {
+    setSelectedModal(itemClicked);
   };
 
   const navbarOverrides = {
@@ -43,19 +62,26 @@ const BrowseBooksPageUnauthenticated: React.FC = () => {
         cursor: "pointer",
       },
       onClick: () => {
-        handleClick("contactUs");
+        handleClick(0);
+      },
+    },
+    Button39493466: {
+      onClick: () => {
+        handleClick(1);
+      },
+    },
+    Button39493467: {
+      onClick: () => {
+        handleClick(2);
       },
     },
   };
   return (
     <>
       <Navbar logoSlot={<LogoComponent />} overrides={navbarOverrides} />
-
-      <ContactUsModal
-        overlayFunctionality={() => {
-          setSelectedItem(null);
-        }}
-      />
+      <BookActionCardCollection width={"100%"} />
+      <Footer width={"100%"} />
+      {modals[selectedModal]}
     </>
   );
 };
