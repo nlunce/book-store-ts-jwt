@@ -1,4 +1,4 @@
-type Book @model @auth(rules: [{allow: public}]) {
+type Book @model @auth(rules: [{allow: public}, {allow: private, operations: [read]}]) {
   id: ID!
   title: String!
   author: [String!]!
@@ -9,3 +9,4 @@ type Book @model @auth(rules: [{allow: public}]) {
   stock: Int!
   available: Boolean!
 }
+ 
