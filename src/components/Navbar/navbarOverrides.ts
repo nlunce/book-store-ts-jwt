@@ -22,10 +22,6 @@ const navbarOverrides: NavbarOverridesProps = {
     style: {
       cursor: "pointer",
     },
-    onClick: () => {
-      // Define the onClick behavior for "Contact us"
-      alert("Contact us clicked"); // For example, show an alert
-    },
   },
   "Frame 321": {
     // Customize Frame 321 properties if needed
@@ -36,18 +32,8 @@ const navbarOverrides: NavbarOverridesProps = {
   actions: {
     // Customize actions properties if needed
   },
-  Button39493466: {
-    onClick: () => {
-      // Define the onClick behavior for Button39493466
-      alert("Button 39493466 clicked"); // For example, show an alert
-    },
-  },
-  Button39493467: {
-    onClick: () => {
-      // Define the onClick behavior for Button39493467
-      alert("Button 39493467 clicked"); // For example, show an alert
-    },
-  },
+  Button39493466: {},
+  Button39493467: {},
 };
 
 export default navbarOverrides;
