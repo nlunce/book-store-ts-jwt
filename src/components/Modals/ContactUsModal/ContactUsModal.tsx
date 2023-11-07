@@ -1,5 +1,5 @@
 import "./contactUsModal.css";
-import { ContactUs } from "../../ui-components";
+import { ContactUs } from "../../../ui-components";
 
 interface ContactUsModalProps {
   overlayFunctionality: () => void; // Specify the function's return type

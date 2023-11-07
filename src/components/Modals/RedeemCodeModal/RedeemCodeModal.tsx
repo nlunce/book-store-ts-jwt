@@ -1,5 +1,5 @@
 import "./redeemCodeModal.css";
-import { RedeemCode } from "../../ui-components";
+import { RedeemCode } from "../../../ui-components";
 
 interface RedeemCodeModalProps {
   overlayFunctionality: () => void; // Specify the function's return type

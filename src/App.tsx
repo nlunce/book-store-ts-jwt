@@ -4,7 +4,7 @@ import awsExports from "./aws-exports";
 
 import "./App.css";
 
-import { BrowseBooksUnauthenticated, BrowseBooksAuthenticated } from "./pages";
+import { BrowseBooksPageUnauth } from "./components/Pages";
 
 Amplify.configure(awsExports);
 
@@ -25,11 +25,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      {/* Render the BrowseBooksPage component if the user is not authenticated (user is null). */}
-      {user === null && <BrowseBooksUnauthenticated />}
-
-      {/* Render the BrowseBooksPageAuthenticated component if the user is authenticated (user is not null). */}
-      {user !== null && <BrowseBooksAuthenticated />}
+      <BrowseBooksPageUnauth />
     </>
   );
 };
