@@ -5,12 +5,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 
-import { BrowseBooksPageUnauth } from "./components/Pages";
+import { BrowseBooksPageUnauth, BrowseBooksPageAuth } from "./components/Pages";
 
 Amplify.configure(awsExports);
 
 const router = createBrowserRouter([
   { path: "/", element: <BrowseBooksPageUnauth /> },
+  { path: "/loggedin", element: <BrowseBooksPageAuth /> },
 ]);
 
 const App: React.FC = () => {
