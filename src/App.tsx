@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Amplify, Auth } from "aws-amplify";
+import React from "react";
+import { Amplify } from "aws-amplify";
 import awsExports from "./aws-exports";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 
@@ -8,26 +9,12 @@ import { BrowseBooksPageUnauth } from "./components/Pages";
 
 Amplify.configure(awsExports);
 
+const router = createBrowserRouter([
+  { path: "/", element: <BrowseBooksPageUnauth /> },
+]);
+
 const App: React.FC = () => {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    Auth.currentAuthenticatedUser()
-      .then((user) => {
-        setUser(user);
-        console.log(user);
-      })
-      .catch((error) => {
-        setUser(null);
-        console.log(error);
-      });
-  }, []);
-
-  return (
-    <>
-      <BrowseBooksPageUnauth />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
