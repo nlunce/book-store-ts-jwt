@@ -1,12 +1,10 @@
 import React from "react";
-import { Navbar } from "../Navbar";
-import { Footer } from "../Footer";
-import { BookCollection } from "../BookCollection";
+import { Footer } from "../components/Footer";
+import { BookCollection } from "../components/BookCollection";
 
 const BrowseBooksPageUnauth: React.FC = () => {
   return (
     <>
-      <Navbar />
       <BookCollection />
       <Footer />
     </>
