@@ -4,12 +4,24 @@ import { Navbar as UINavbar } from "../../ui-components";
 import { LogoComponent } from "../LogoComponent";
 import navbarOverrides from "./navbarOverrides";
 import { AuthenticatorModal, ContactUsModal } from "../Modals";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate();
+  function navigateHandler(page: string | null) {
+    navigate(`/${page}`);
+  }
+
   interface NavOverrides {}
 
   const navOverrides: NavOverrides = {
     ...navbarOverrides,
+    Home: {
+      ...navbarOverrides["Home"],
+      onClick: () => {
+        navigateHandler("");
+      },
+    },
     "Contact us": {
       ...navbarOverrides["Contact us"],
       onClick: () => {
@@ -52,7 +64,16 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <UINavbar overrides={navOverrides} logoSlot={<LogoComponent />} />
+      <UINavbar
+        overrides={navOverrides}
+        logoSlot={
+          <LogoComponent
+            onClick={() => {
+              navigateHandler("");
+            }}
+          />
+        }
+      />
       {modals[selectedModal]}
     </>
   );

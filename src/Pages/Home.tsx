@@ -1,6 +1,4 @@
 import React from "react";
-
-import { Footer } from "../components/Footer";
 import { Link } from "react-router-dom";
 
 // Define a functional component for the main Browse Books page.
@@ -16,8 +14,6 @@ const Home: React.FC = () => {
           <Link to="/loggedin">Logged In</Link>
         </li>
       </ul>
-
-      <Footer />
     </>
   );
 };
