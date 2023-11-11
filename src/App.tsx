@@ -13,6 +13,7 @@ import {
 } from "./Pages";
 
 //TODO: IMPLEMENT CSS MODULE
+//TODO: IMPLEMENT ERROR PAGE
 Amplify.configure(awsExports);
 
 const router = createBrowserRouter([
