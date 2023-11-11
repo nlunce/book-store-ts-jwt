@@ -33,11 +33,7 @@ export default function HeroLayout1(props) {
     {
       overrides: {
         Eyebrow: { color: "rgba(188,236,245,1)", children: "Full-stack" },
-        Heading: {
-          color: "rgba(255,255,255,1)",
-          children:
-            "Build full-stack web and mobile apps in hours. Easy to start, easy to scale",
-        },
+        Heading: { color: "rgba(255,255,255,1)" },
         Body: { color: "rgba(255,255,255,1)" },
         Message: {},
         Button: {},
@@ -153,7 +149,7 @@ export default function HeroLayout1(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Unlocking Knowledge, One Page at a Time"
+              children="Build full-stack web and mobile apps in hours. Easy to start, easy to scale"
               {...getOverrideProps(overrides, "Heading")}
             ></Text>
             <Text
