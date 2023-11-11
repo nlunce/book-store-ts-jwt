@@ -24,6 +24,7 @@ export { default as Footer } from "./Footer";
 export { default as FormCheckout } from "./FormCheckout";
 export { default as HeroLayout } from "./HeroLayout";
 export { default as HeroLayout1 } from "./HeroLayout1";
+export { default as HomeHeroLayout } from "./HomeHeroLayout";
 export { default as ItemCard } from "./ItemCard";
 export { default as Logo } from "./Logo";
 export { default as LogoWithText } from "./LogoWithText";
