@@ -6,54 +6,10 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  getOverrideProps,
-  getOverridesFromVariants,
-  mergeVariantsAndOverrides,
-} from "./utils";
+import { getOverrideProps } from "./utils";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
-export default function HeroLayout1(props) {
-  const { overrides: overridesProp, ...rest } = props;
-  const variants = [
-    {
-      overrides: {
-        Eyebrow: {},
-        Heading: {},
-        Body: {},
-        Message: {},
-        Button: {},
-        HeroMessage: {},
-        Left: {},
-        image: {},
-        Right: {},
-        HeroLayout1: {},
-      },
-      variantValues: { mode: "Light" },
-    },
-    {
-      overrides: {
-        Eyebrow: { color: "rgba(188,236,245,1)", children: "Full-stack" },
-        Heading: {
-          color: "rgba(255,255,255,1)",
-          children:
-            "Build full-stack web and mobile apps in hours. Easy to start, easy to scale",
-        },
-        Body: { color: "rgba(255,255,255,1)" },
-        Message: {},
-        Button: {},
-        HeroMessage: {},
-        Left: { backgroundColor: "rgba(13,26,38,1)" },
-        image: { width: "unset", alignSelf: "stretch" },
-        Right: {},
-        HeroLayout1: {},
-      },
-      variantValues: { mode: "Dark" },
-    },
-  ];
-  const overrides = mergeVariantsAndOverrides(
-    getOverridesFromVariants(variants, props),
-    overridesProp || {}
-  );
+export default function HomeHeroLayout(props) {
+  const { overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -64,8 +20,7 @@ export default function HeroLayout1(props) {
       alignItems="center"
       position="relative"
       padding="0px 0px 0px 0px"
-      display="flex"
-      {...getOverrideProps(overrides, "HeroLayout1")}
+      {...getOverrideProps(overrides, "HomeHeroLayout")}
       {...rest}
     >
       <Flex
@@ -81,7 +36,6 @@ export default function HeroLayout1(props) {
         position="relative"
         padding="120px 120px 120px 120px"
         backgroundColor="rgba(255,255,255,1)"
-        display="flex"
         {...getOverrideProps(overrides, "Left")}
       >
         <Flex
@@ -95,7 +49,6 @@ export default function HeroLayout1(props) {
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
-          display="flex"
           {...getOverrideProps(overrides, "HeroMessage")}
         >
           <Flex
@@ -109,31 +62,8 @@ export default function HeroLayout1(props) {
             alignSelf="stretch"
             position="relative"
             padding="0px 0px 0px 0px"
-            display="flex"
             {...getOverrideProps(overrides, "Message")}
           >
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="700"
-              color="rgba(64,170,191,1)"
-              lineHeight="24px"
-              textAlign="center"
-              display="block"
-              direction="column"
-              justifyContent="unset"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
-              shrink="0"
-              alignSelf="stretch"
-              position="relative"
-              padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Full stack"
-              {...getOverrideProps(overrides, "Eyebrow")}
-            ></Text>
             <Text
               fontFamily="Inter"
               fontSize="24px"
@@ -176,7 +106,7 @@ export default function HeroLayout1(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="AWS Amplify is a complete solution that lets frontend web and mobile developers easily build, ship, and host full-stack applications on AWS, with the flexibility to leverage the breadth of AWS services as use cases evolve. No cloud expertise needed."
+              children="Welcome to “Book Store Name”, your gateway to a world of knowledge and academic excellence. We understand the importance of quality textbooks in shaping your educational journey, and we're here to make that journey seamless and enriching."
               {...getOverrideProps(overrides, "Body")}
             ></Text>
           </Flex>
@@ -204,7 +134,6 @@ export default function HeroLayout1(props) {
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
-        display="flex"
         {...getOverrideProps(overrides, "Right")}
       >
         <Image
@@ -220,6 +149,7 @@ export default function HeroLayout1(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="unset"
+          src="https://i0.wp.com/blog.taaonline.net/wp-content/uploads/2013/07/textbooks.jpg?fit=1000%2C666&ssl=1"
           {...getOverrideProps(overrides, "image")}
         ></Image>
       </Flex>
