@@ -2,7 +2,7 @@ import React from "react";
 import { BookCollection } from "../components/BookCollection";
 // import { useLoaderData } from "react-router-dom";
 
-const BrowseBooksPageUnauth: React.FC = () => {
+const BooksPage: React.FC = () => {
   // const data = useLoaderData();
   return (
     <>
@@ -12,7 +12,7 @@ const BrowseBooksPageUnauth: React.FC = () => {
   );
 };
 
-export default BrowseBooksPageUnauth;
+export default BooksPage;
 
 // export async function loader() {
 //   const response = await fetch("http://localhost:8080/events");

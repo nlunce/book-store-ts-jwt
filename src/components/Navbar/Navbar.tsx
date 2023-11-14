@@ -22,6 +22,12 @@ const Navbar: React.FC = () => {
         navigateHandler("");
       },
     },
+    Books: {
+      ...navbarOverrides["Books"],
+      onClick: () => {
+        navigateHandler("books");
+      },
+    },
     "Contact us": {
       ...navbarOverrides["Contact us"],
       onClick: () => {
@@ -41,25 +47,7 @@ const Navbar: React.FC = () => {
       },
     },
   };
-  const modals = [
-    <ContactUsModal
-      overlayFunctionality={() => {
-        setSelectedModal(-1);
-      }}
-    />,
-    <AuthenticatorModal
-      overlayFunctionality={() => {
-        setSelectedModal(-1);
-      }}
-      initialState="signIn"
-    />,
-    <AuthenticatorModal
-      overlayFunctionality={() => {
-        setSelectedModal(-1);
-      }}
-      initialState="signUp"
-    />,
-  ];
+
   const [selectedModal, setSelectedModal] = useState<number>(-1);
 
   return (
@@ -74,7 +62,6 @@ const Navbar: React.FC = () => {
           />
         }
       />
-      {modals[selectedModal]}
     </>
   );
 };

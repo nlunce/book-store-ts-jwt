@@ -28,16 +28,16 @@ export default function Navbar(props) {
       {...rest}
     >
       <Flex
-        gap="32px"
+        gap="40px"
         direction="row"
         width="unset"
         height="unset"
-        justifyContent="center"
+        justifyContent="flex-start"
         alignItems="center"
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Frame 5")}
+        {...getOverrideProps(overrides, "Frame 322")}
       >
         <View
           width="66px"
@@ -49,7 +49,6 @@ export default function Navbar(props) {
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
-          children={logoSlot}
           {...getOverrideProps(overrides, "LogoSlot")}
         ></View>
         <Text
@@ -112,6 +111,48 @@ export default function Navbar(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
+          children="Your Books"
+          {...getOverrideProps(overrides, "Your Books")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="400"
+          color="rgba(13,26,38,1)"
+          lineHeight="24px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="Redeem Code"
+          {...getOverrideProps(overrides, "Redeem Code")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="400"
+          color="rgba(13,26,38,1)"
+          lineHeight="24px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
           children="Contact us"
           {...getOverrideProps(overrides, "Contact us")}
         ></Text>
@@ -144,6 +185,40 @@ export default function Navbar(props) {
           type="shopping_bag"
           {...getOverrideProps(overrides, "MyIcon")}
         ></MyIcon>
+        <Flex
+          gap="10px"
+          direction="column"
+          width="unset"
+          height="unset"
+          justifyContent="center"
+          alignItems="center"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          {...getOverrideProps(overrides, "Frame 440")}
+        >
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="400"
+            color="rgba(92,102,112,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="user"
+            {...getOverrideProps(overrides, "User")}
+          ></Text>
+        </Flex>
       </Flex>
       <Flex
         gap="8px"
@@ -176,6 +251,16 @@ export default function Navbar(props) {
           variation="primary"
           children="Sign up"
           {...getOverrideProps(overrides, "Button39493467")}
+        ></Button>
+        <Button
+          width="unset"
+          height="unset"
+          shrink="0"
+          size="default"
+          isDisabled={false}
+          variation="primary"
+          children="Log Out"
+          {...getOverrideProps(overrides, "Button4456836")}
         ></Button>
       </Flex>
     </Flex>

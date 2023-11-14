@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { HomeHero } from "../components/HomeHero";
 
 // Define a functional component for the main Browse Books page.
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <ul>
         <li>
-          <Link to="/notloggedin">Not Logged IN</Link>
+          <Link to="/books">Not Logged IN</Link>
         </li>
         <li>
           <Link to="/loggedin">Logged In</Link>
@@ -19,4 +19,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomePage;

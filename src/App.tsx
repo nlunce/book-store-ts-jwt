@@ -2,14 +2,14 @@ import React from "react";
 import { Amplify } from "aws-amplify";
 import awsExports from "./aws-exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import "./App.css";
+import { tokenLoader } from "./util/auth";
 
 import {
   RootLayout,
-  Home,
-  BrowseBooksPageUnauth,
-  BrowseBooksPageAuth,
+  HomePage,
+  BooksPage,
+  ErrorPage,
+  ContactUsPage,
 } from "./Pages";
 
 //TODO: IMPLEMENT CSS MODULE
@@ -20,10 +20,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    id: "root",
+    loader: tokenLoader,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/loggedin", element: <BrowseBooksPageAuth /> },
-      { path: "/notloggedin", element: <BrowseBooksPageUnauth /> },
+      { index: true, element: <HomePage /> },
+      { path: "contact-us", element: <ContactUsPage /> },
+      { path: "books", element: <BooksPage /> },
     ],
   },
 ]);
