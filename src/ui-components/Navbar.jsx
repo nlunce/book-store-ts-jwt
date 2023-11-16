@@ -49,6 +49,7 @@ export default function Navbar(props) {
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
+          children={logoSlot}
           {...getOverrideProps(overrides, "LogoSlot")}
         ></View>
         <Text

@@ -1,9 +1,8 @@
 // Navbar.tsx
-import React, { useState } from "react";
+import React from "react";
 import { Navbar as UINavbar } from "../../ui-components";
 import { LogoComponent } from "../LogoComponent";
-import navbarOverrides from "./navbarOverrides";
-import { AuthenticatorModal, ContactUsModal } from "../Modals";
+// import navbarOverrides from "./navbarOverrides";
 import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
@@ -12,56 +11,68 @@ const Navbar: React.FC = () => {
     navigate(`/${page}`);
   }
 
-  interface NavOverrides {}
-
-  const navOverrides: NavOverrides = {
-    ...navbarOverrides,
+  const navOverrides = {
+    Navbar: {
+      width: "100%",
+    },
+    LogoSlot: {
+      style: {
+        cursor: "pointer",
+      },
+      onClick: () => {
+        navigateHandler("");
+      },
+    },
     Home: {
-      ...navbarOverrides["Home"],
+      style: {
+        cursor: "pointer",
+      },
       onClick: () => {
         navigateHandler("");
       },
     },
     Books: {
-      ...navbarOverrides["Books"],
+      style: {
+        cursor: "pointer",
+      },
       onClick: () => {
         navigateHandler("books");
       },
     },
+    "Your Books": {
+      style: {
+        cursor: "pointer",
+      },
+    },
+    "Redeem Code": {
+      style: {
+        cursor: "pointer",
+      },
+      onClick: () => {
+        navigateHandler("");
+      },
+    },
     "Contact us": {
-      ...navbarOverrides["Contact us"],
+      style: {
+        cursor: "pointer",
+      },
       onClick: () => {
-        setSelectedModal(0);
+        navigateHandler("contact-us");
       },
     },
-    Button39493466: {
-      ...navbarOverrides["Button39493466"],
-      onClick: () => {
-        setSelectedModal(1);
+    User: {
+      style: {
+        cursor: "pointer",
       },
-    },
-    Button39493467: {
-      ...navbarOverrides["Button39493467"],
       onClick: () => {
-        setSelectedModal(2);
+        navigateHandler("");
       },
     },
   };
 
-  const [selectedModal, setSelectedModal] = useState<number>(-1);
-
   return (
     <>
-      <UINavbar
-        overrides={navOverrides}
-        logoSlot={
-          <LogoComponent
-            onClick={() => {
-              navigateHandler("");
-            }}
-          />
-        }
-      />
+      <UINavbar overrides={navOverrides} logoSlot={<LogoComponent />} />
     </>
   );
 };

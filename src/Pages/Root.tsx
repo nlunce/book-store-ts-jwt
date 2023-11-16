@@ -7,8 +7,15 @@ export default function RootLayout() {
       <nav>
         <Navbar />
       </nav>
-
-      <main>
+      <main
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "80vh",
+          padding: "1rem",
+        }}
+      >
         <Outlet />
       </main>
 

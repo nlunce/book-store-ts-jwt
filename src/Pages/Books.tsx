@@ -4,12 +4,7 @@ import { BookCollection } from "../components/BookCollection";
 
 const BooksPage: React.FC = () => {
   // const data = useLoaderData();
-  return (
-    <>
-      <h1>Not logged in</h1>
-      <BookCollection />
-    </>
-  );
+  return <BookCollection />;
 };
 
 export default BooksPage;
