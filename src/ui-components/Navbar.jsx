@@ -249,6 +249,7 @@ export default function Navbar(props) {
           shrink="0"
           size="default"
           isDisabled={false}
+          hidden={true}
           variation="primary"
           children="Sign up"
           {...getOverrideProps(overrides, "Button39493467")}

@@ -1,0 +1,10 @@
+/* ContactUs.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  height: 100vh; /* Adjust the height based on your needs */
+}

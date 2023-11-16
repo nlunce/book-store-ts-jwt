@@ -10,6 +10,7 @@ import {
   BooksPage,
   ErrorPage,
   ContactUsPage,
+  AuthenticationPage,
 } from "./Pages";
 
 //TODO: IMPLEMENT CSS MODULE
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "contact-us", element: <ContactUsPage /> },
       { path: "books", element: <BooksPage /> },
+      {
+        path: "auth",
+        element: <AuthenticationPage />,
+        // action: authAction,
+      },
     ],
   },
 ]);
