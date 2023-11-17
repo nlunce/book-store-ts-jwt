@@ -6,11 +6,13 @@
 
 /* eslint-disable */
 import * as React from "react";
+import { useAuth } from "@aws-amplify/ui-react/internal";
 import { getOverrideProps, useAuthSignOutAction } from "./utils";
 import { Button, Flex, Text, View } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function Navbar(props) {
   const { logoSlot, overrides, ...rest } = props;
+  const authAttributes = useAuth().user?.attributes ?? {};
   const buttonFourFourFiveSixEightThreeSixOnClick = useAuthSignOutAction({
     global: false,
   });
@@ -219,7 +221,7 @@ export default function Navbar(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="user"
+            children={authAttributes["name"]}
             {...getOverrideProps(overrides, "User")}
           ></Text>
         </Flex>
