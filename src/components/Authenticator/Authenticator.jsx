@@ -1,7 +1,5 @@
 import { useSearchParams } from "react-router-dom";
 
-import { Amplify, Auth } from "aws-amplify";
-
 import {
   Authenticator as AuthenticatorUI,
   useTheme,
@@ -9,6 +7,7 @@ import {
   Image,
   Heading,
 } from "@aws-amplify/ui-react";
+import { Auth } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 const Authenticator = () => {
   const [searchParams] = useSearchParams();
@@ -17,7 +16,6 @@ const Authenticator = () => {
   const components = {
     Header() {
       const { tokens } = useTheme();
-      console.log(tokens);
 
       return (
         <View textAlign="center" padding={tokens.space.large}>

@@ -3,7 +3,6 @@ import { Amplify } from "aws-amplify";
 import awsExports from "./aws-exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { tokenLoader } from "./util/auth";
-
 import {
   RootLayout,
   HomePage,
