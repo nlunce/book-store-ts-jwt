@@ -1,27 +1,44 @@
-# React + TypeScript + Vite
+# Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In my pursuit of continuous learning as a software engineer, I have developed a software project with the aim of enhancing my skills and knowledge. The software I've created serves as a practical application of what I've learned and showcases my ability to build a functional system.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I developed an event website by utilizing a tech stack that includes JavaScript, and React.
 
-## Expanding the ESLint configuration
+## Purpose
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The primary purpose behind creating this software is to establish a user-centric and efficient events website. Through this platform, users can browse an extensive catalog of events, access detailed information about each event, and create or edit events.
 
-- Configure the top-level `parserOptions` property like this:
+[Software Demo Video](https://youtu.be/ZOHBvnGohN0)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+# Development Environment
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+During the development of this project, I used the following tools and technologies:
+
+- Front-end:
+  - HTML, CSS, and JavaScript
+  - [React](https://reactjs.org) for building the user interface
+- Back-end:
+  - [Node.js](https://nodejs.org) for server-side development
+- Version Control:
+  - [Git](https://git-scm.com) for source code management
+  - [GitHub](https://github.com) for remote repository hosting
+
+# Useful Websites
+
+Throughout the project, I found the following websites to be helpful in gaining knowledge, troubleshooting issues, and improving my development skills:
+
+- [React - The Complete Guide 2023 (incl. React Router & Redux) - Udemy Course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/): Dive in and learn React.js from scratch! Learn React, Hooks, Redux, React Router, Next.js, Best Practices and way more!
+- [MDN Web Docs](https://developer.mozilla.org): A comprehensive resource for web development documentation and tutorials.
+- [Stack Overflow](https://stackoverflow.com): A valuable community where I found answers to various technical questions.
+
+# Future Work
+
+- Add JWT persistent authorization and have protected routes
+- Connect a Cognito user pool
+
+
+
+
+
