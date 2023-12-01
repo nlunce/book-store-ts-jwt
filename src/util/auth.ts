@@ -1,3 +1,5 @@
+import { redirect } from "react-router-dom";
+
 // export function getTokenDuration() {
 //   const storedExpirationDate: string | null =
 //     localStorage.getItem("expiration");
@@ -8,7 +10,7 @@
 // }
 
 export function getAuthToken() {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("jwtToken");
 
   if (!token) {
     return null;
@@ -25,4 +27,14 @@ export function getAuthToken() {
 
 export function tokenLoader() {
   return getAuthToken();
+}
+
+export function checkAuthLoader() {
+  const token = getAuthToken();
+
+  if (!token) {
+    return redirect("/auth");
+  }
+
+  return null;
 }

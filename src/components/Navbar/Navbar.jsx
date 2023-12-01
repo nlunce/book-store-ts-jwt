@@ -74,7 +74,7 @@ const Navbar = () => {
         navigateHandler("");
       },
     },
-    Button39493466: {
+    Button4457599: {
       //Log In
       style: {
         visibility: token ? "visible" : "hidden",
@@ -96,6 +96,15 @@ const Navbar = () => {
       //Logout
       style: {
         visibility: token ? "visible" : "hidden",
+      },
+    },
+    Button39493466: {
+      //create book
+      style: {
+        visibility: token ? "visible" : "hidden",
+      },
+      onClick: () => {
+        navigateHandler("new-book");
       },
     },
   };

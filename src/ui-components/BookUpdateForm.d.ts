@@ -24,7 +24,7 @@ export declare type ValidationResponse = {
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type BookUpdateFormInputValues = {
     title?: string;
-    author?: string[];
+    author?: string;
     description?: string;
     bookCover?: string;
     price?: number;

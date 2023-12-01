@@ -4,3 +4,4 @@ export { default as AuthenticationPage } from "./Authentication";
 export { default as ContactUsPage } from "./ContactUs";
 export { default as RootLayout } from "./Root";
 export { default as ErrorPage } from "./Error";
+export { default as CreateBook } from "./CreateBook";

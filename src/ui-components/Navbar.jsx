@@ -245,8 +245,18 @@ export default function Navbar(props) {
           size="default"
           isDisabled={false}
           variation="link"
-          children="Log in"
+          children="Create Book"
           {...getOverrideProps(overrides, "Button39493466")}
+        ></Button>
+        <Button
+          width="unset"
+          height="unset"
+          shrink="0"
+          size="default"
+          isDisabled={false}
+          variation="link"
+          children="Log in"
+          {...getOverrideProps(overrides, "Button4457599")}
         ></Button>
         <Button
           width="unset"

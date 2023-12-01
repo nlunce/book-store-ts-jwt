@@ -10,8 +10,10 @@ import {
   ErrorPage,
   ContactUsPage,
   AuthenticationPage,
+  CreateBook,
 } from "./Pages";
 
+import { action as createBookAction } from "./components/CreateBookForm/CreateBookForm";
 //TODO: IMPLEMENT CSS MODULE
 //TODO: IMPLEMENT ERROR PAGE
 Amplify.configure(awsExports);
@@ -31,6 +33,11 @@ const router = createBrowserRouter([
         path: "auth",
         element: <AuthenticationPage />,
         // action: authAction,
+      },
+      {
+        path: "new-book",
+        element: <CreateBook />,
+        action: createBookAction,
       },
     ],
   },

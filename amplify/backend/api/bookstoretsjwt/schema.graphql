@@ -1,7 +1,7 @@
 type Book @model @auth(rules: [{allow: public}, {allow: private, operations: [read]}]) {
   id: ID!
   title: String!
-  author: [String!]!
+  author: String!
   description: String!
   bookCover: String!
   price: Float!

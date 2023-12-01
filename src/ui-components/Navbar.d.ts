@@ -33,6 +33,7 @@ export declare type NavbarOverridesProps = {
     User?: PrimitiveOverrideProps<TextProps>;
     actions?: PrimitiveOverrideProps<FlexProps>;
     Button39493466?: PrimitiveOverrideProps<ButtonProps>;
+    Button4457599?: PrimitiveOverrideProps<ButtonProps>;
     Button39493467?: PrimitiveOverrideProps<ButtonProps>;
     Button4456836?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
