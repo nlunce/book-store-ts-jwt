@@ -8,7 +8,7 @@ I implemented JSON web token persistent authorization on my bookstore website by
 
 ## Purpose
 
-The primary purpose behind creating this software is to establish a user-centric and efficient events website. Through this platform, users can browse an extensive catalog of events, access detailed information about each event, and create or edit events.
+The primary purpose behind creating this software is to establish a user-centric and efficient bookstore website. Through this platform, users can browse an extensive catalog of books, and access detailed information about each book.
 
 [Software Demo Video](https://youtu.be/wFa1nLqK1wg)
 
@@ -43,8 +43,7 @@ Throughout the project, I found the following websites to be helpful in gaining 
 
 # Future Work
 
-- Add JWT persistent authorization and have protected routes
-- Connect a Cognito user pool
+- Style create book form component
 
 
 
