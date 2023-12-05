@@ -11,17 +11,24 @@ import {
 import { getAuthToken } from "../../util/auth";
 import classes from "./CreateBookForm.module.css";
 
+// CreateBookForm component for creating/editing book information
 export default function CreateBookForm({ method, event }) {
+  // Retrieve data from the current action
   const data = useActionData();
+  // Functions to handle navigation
   const navigate = useNavigate();
   const navigation = useNavigation();
 
+  // Check if the form is currently submitting
   const isSubmitting = navigation.state === "submitting";
 
+  // Function to handle cancel button click
   function cancelHandler() {
+    // Navigate back to the previous page
     navigate("..");
   }
 
+  // JSX structure for the book creation/edit form
   return (
     <Form method={method} className={classes.form}>
       {data && data.errors && (
@@ -114,10 +121,14 @@ export default function CreateBookForm({ method, event }) {
   );
 }
 
+// Async function to handle the form submission action
 export async function action({ request }) {
+  // Set the HTTP method for the request
   const method = "POST";
+  // Get form data from the request
   const data = await request.formData();
 
+  // Create a data object with book details from the form
   const bookData = {
     tableName: "Book-bdqngtw7rbcubg5djn65kaiddu-staging",
     __typename: "Book",
@@ -130,9 +141,13 @@ export async function action({ request }) {
     stock: parseInt(data.get("stock")),
   };
 
+  // API endpoint URL for creating a new book
   const url =
     "https://blwjixbd7b.execute-api.us-west-2.amazonaws.com/dev/create-book";
+  // Get the authentication token
   const token = getAuthToken();
+
+  // Send a request to the API to create a new book
   const response = await fetch(url, {
     method: method,
     headers: {
@@ -142,9 +157,11 @@ export async function action({ request }) {
     body: JSON.stringify(bookData),
   });
 
+  // If the response is not okay, throw an error with a message
   if (!response.ok) {
     throw json({ message: "Could not save event." }, { status: 500 });
   }
 
+  // Redirect to the books page after successful book creation
   return redirect("/books");
 }
